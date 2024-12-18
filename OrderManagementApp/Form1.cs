@@ -17,8 +17,7 @@ namespace OrderManagementApp
         // Загружаем данные для заказов
         private void LoadOrders()
         {
-            // Загрузка данных (здесь можно подключить к базе данных или просто задать список)
-           
+            // Загрузка данных (здесь можно подключить к базе данных или просто задать список)           
             orders = new List<Order>
             {
                 new Order
@@ -98,7 +97,7 @@ namespace OrderManagementApp
 
             ordersGridView.DataSource = orders;
         }
-  
+
         private void ordersGridView_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -114,7 +113,7 @@ namespace OrderManagementApp
                     orderIdTextBox.Text = selectedOrder.Id.ToString();
                     statusTextBox.Text = selectedOrder.Status;
                     dateTimePickerOrderDate.Value = selectedOrder.OrderDate;
-                    dateTimePickerDeliveryDate.Value = selectedOrder.DeliveryDate;
+                    dateTimeGivingTheEnd.Value = selectedOrder.DeliveryDate;
                 }
             }
             catch(System.IndexOutOfRangeException)
@@ -158,7 +157,7 @@ namespace OrderManagementApp
                     selectedOrder.Department = departmentTextBox.Text;
                     selectedOrder.Status = statusTextBox.Text;
                     selectedOrder.OrderDate = dateTimePickerOrderDate.Value;
-                    selectedOrder.DeliveryDate = dateTimePickerDeliveryDate.Value;
+                    selectedOrder.DeliveryDate = dateTimeGivingTheEnd.Value;
 
                     ordersGridView.Refresh();
                 }
@@ -195,7 +194,7 @@ namespace OrderManagementApp
                     MessageBox.Show("Выбранный заказ нельзя удалить - последний заказ (для удаления добавьте новый заказ)", "Запрет удаления", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                {                 
+                {
                     var result = MessageBox.Show("Вы уверены, что хотите удалить этот заказ?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if(result == DialogResult.Yes)
@@ -250,24 +249,24 @@ namespace OrderManagementApp
             var department = departmentTextBox.Text;
             var status = statusTextBox.Text;
             var orderDate = dateTimePickerOrderDate.Value;
-            var deliveryDate = dateTimePickerDeliveryDate.Value;
+            var deliveryDate = dateTimeGivingTheEnd.Value;
 
             var newOrder = new Order
             {
-                Id = orders.Count + 1, 
+                Id = orders.Count + 1,
                 Department = department,
                 Status = status,
                 OrderDate = orderDate,
                 DeliveryDate = deliveryDate,
-                Items = new List<OrderItem>() 
+                Items = new List<OrderItem>()
             };
 
             // Добавляем новую позицию в заказ 
             var newItem = new OrderItem
             {
                 Id = 1, // ID первой позиции 
-                SteelGrade = "Grade A", 
-                Diameter = 10, 
+                SteelGrade = "Grade A",
+                Diameter = 10,
                 WallThickness = 1,
                 Volume = 100,
                 Unit = "м3",
@@ -311,7 +310,7 @@ namespace OrderManagementApp
             {
                 id = 1;
             }
-    
+
             var newItem = new OrderItem
             {
                 Id = id, // Присваиваем новый уникальный ID
@@ -322,18 +321,18 @@ namespace OrderManagementApp
                 Unit = unit,
                 Status = status
             };
-                      
+
             selectedOrder.Items.Add(newItem);
 
-         
-            itemsGridView.DataSource = null; 
-            itemsGridView.DataSource = selectedOrder.Items;           
+
+            itemsGridView.DataSource = null;
+            itemsGridView.DataSource = selectedOrder.Items;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
             string searchQuery = searchTextBox.Text.ToLower();
-          
+
             var filteredOrders = orders.Where(order =>
                 order.Department.ToLower().Contains(searchQuery) || // Поиск по цеху-производителю
                 order.Items.Any(item =>
@@ -346,32 +345,32 @@ namespace OrderManagementApp
                 )
             ).ToList();
 
-            ordersGridView.DataSource = null; 
-            ordersGridView.DataSource = filteredOrders; 
-             
+            ordersGridView.DataSource = null;
+            ordersGridView.DataSource = filteredOrders;
+
             if(ordersGridView.SelectedRows.Count > 0)
             {
                 var selectedOrder = ordersGridView.SelectedRows[0].DataBoundItem as Order;
                 if(selectedOrder != null)
                 {
-                    itemsGridView.DataSource = selectedOrder.Items; 
+                    itemsGridView.DataSource = selectedOrder.Items;
                 }
             }
         }
 
         private void clearSearchButton_Click(object sender, EventArgs e)
-        {           
+        {
             searchTextBox.Clear();
-                       
+
             ordersGridView.DataSource = null;
-            ordersGridView.DataSource = orders; 
-         
+            ordersGridView.DataSource = orders;
+
             if(ordersGridView.SelectedRows.Count > 0)
             {
                 var selectedOrder = ordersGridView.SelectedRows[0].DataBoundItem as Order;
                 if(selectedOrder != null)
                 {
-                    itemsGridView.DataSource = selectedOrder.Items; 
+                    itemsGridView.DataSource = selectedOrder.Items;
                 }
             }
         }

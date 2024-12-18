@@ -33,7 +33,7 @@
             dateTimePickerOrderDate = new DateTimePicker();
             orderIdTextBox = new TextBox();
             statusTextBox = new TextBox();
-            dateTimePickerDeliveryDate = new DateTimePicker();
+            dateTimeGivingTheEnd = new DateTimePicker();
             itemsGridView = new DataGridView();
             steelGradeTextBox = new TextBox();
             diameterTextBox = new TextBox();
@@ -50,6 +50,19 @@
             searchTextBox = new TextBox();
             searchButton = new Button();
             clearSearchButton = new Button();
+            labelOrders = new Label();
+            labelOrderItems = new Label();
+            labelDepartment = new Label();
+            labelOrderId = new Label();
+            labelStatus = new Label();
+            labelPickerOrderDate = new Label();
+            labelGivingTheEnd = new Label();
+            labelSteelGrade = new Label();
+            labelDiameter = new Label();
+            labelWallThickness = new Label();
+            labelVolume = new Label();
+            labelUnit = new Label();
+            labelItemStatus = new Label();
             ((System.ComponentModel.ISupportInitialize)ordersGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemsGridView).BeginInit();
             SuspendLayout();
@@ -57,7 +70,7 @@
             // ordersGridView
             // 
             ordersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ordersGridView.Location = new Point(12, 12);
+            ordersGridView.Location = new Point(12, 21);
             ordersGridView.Name = "ordersGridView";
             ordersGridView.Size = new Size(544, 232);
             ordersGridView.TabIndex = 0;
@@ -65,7 +78,7 @@
             // 
             // departmentTextBox
             // 
-            departmentTextBox.Location = new Point(12, 261);
+            departmentTextBox.Location = new Point(11, 276);
             departmentTextBox.Name = "departmentTextBox";
             departmentTextBox.Size = new Size(140, 23);
             departmentTextBox.TabIndex = 1;
@@ -73,14 +86,14 @@
             // 
             // dateTimePickerOrderDate
             // 
-            dateTimePickerOrderDate.Location = new Point(181, 261);
+            dateTimePickerOrderDate.Location = new Point(180, 276);
             dateTimePickerOrderDate.Name = "dateTimePickerOrderDate";
             dateTimePickerOrderDate.Size = new Size(140, 23);
             dateTimePickerOrderDate.TabIndex = 2;
             // 
             // orderIdTextBox
             // 
-            orderIdTextBox.Location = new Point(12, 299);
+            orderIdTextBox.Location = new Point(11, 314);
             orderIdTextBox.Name = "orderIdTextBox";
             orderIdTextBox.Size = new Size(140, 23);
             orderIdTextBox.TabIndex = 3;
@@ -88,23 +101,23 @@
             // 
             // statusTextBox
             // 
-            statusTextBox.Location = new Point(12, 338);
+            statusTextBox.Location = new Point(11, 353);
             statusTextBox.Name = "statusTextBox";
             statusTextBox.Size = new Size(140, 23);
             statusTextBox.TabIndex = 4;
             statusTextBox.Text = "Статус";
             // 
-            // dateTimePickerDeliveryDate
+            // dateTimeGivingTheEnd
             // 
-            dateTimePickerDeliveryDate.Location = new Point(181, 299);
-            dateTimePickerDeliveryDate.Name = "dateTimePickerDeliveryDate";
-            dateTimePickerDeliveryDate.Size = new Size(140, 23);
-            dateTimePickerDeliveryDate.TabIndex = 5;
+            dateTimeGivingTheEnd.Location = new Point(180, 314);
+            dateTimeGivingTheEnd.Name = "dateTimeGivingTheEnd";
+            dateTimeGivingTheEnd.Size = new Size(140, 23);
+            dateTimeGivingTheEnd.TabIndex = 5;
             // 
             // itemsGridView
             // 
             itemsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            itemsGridView.Location = new Point(562, 12);
+            itemsGridView.Location = new Point(562, 21);
             itemsGridView.Name = "itemsGridView";
             itemsGridView.Size = new Size(747, 232);
             itemsGridView.TabIndex = 6;
@@ -112,7 +125,7 @@
             // 
             // steelGradeTextBox
             // 
-            steelGradeTextBox.Location = new Point(579, 261);
+            steelGradeTextBox.Location = new Point(578, 276);
             steelGradeTextBox.Name = "steelGradeTextBox";
             steelGradeTextBox.Size = new Size(140, 23);
             steelGradeTextBox.TabIndex = 7;
@@ -120,7 +133,7 @@
             // 
             // diameterTextBox
             // 
-            diameterTextBox.Location = new Point(579, 299);
+            diameterTextBox.Location = new Point(578, 314);
             diameterTextBox.Name = "diameterTextBox";
             diameterTextBox.Size = new Size(140, 23);
             diameterTextBox.TabIndex = 8;
@@ -128,7 +141,7 @@
             // 
             // wallThicknessTextBox
             // 
-            wallThicknessTextBox.Location = new Point(579, 338);
+            wallThicknessTextBox.Location = new Point(578, 353);
             wallThicknessTextBox.Name = "wallThicknessTextBox";
             wallThicknessTextBox.Size = new Size(140, 23);
             wallThicknessTextBox.TabIndex = 9;
@@ -136,7 +149,7 @@
             // 
             // volumeTextBox
             // 
-            volumeTextBox.Location = new Point(750, 261);
+            volumeTextBox.Location = new Point(749, 276);
             volumeTextBox.Name = "volumeTextBox";
             volumeTextBox.Size = new Size(140, 23);
             volumeTextBox.TabIndex = 10;
@@ -144,7 +157,7 @@
             // 
             // unitTextBox
             // 
-            unitTextBox.Location = new Point(750, 299);
+            unitTextBox.Location = new Point(749, 314);
             unitTextBox.Name = "unitTextBox";
             unitTextBox.Size = new Size(140, 23);
             unitTextBox.TabIndex = 11;
@@ -152,7 +165,7 @@
             // 
             // itemStatusTextBox
             // 
-            itemStatusTextBox.Location = new Point(750, 338);
+            itemStatusTextBox.Location = new Point(749, 353);
             itemStatusTextBox.Name = "itemStatusTextBox";
             itemStatusTextBox.Size = new Size(140, 23);
             itemStatusTextBox.TabIndex = 12;
@@ -160,7 +173,7 @@
             // 
             // updateOrderButton
             // 
-            updateOrderButton.Location = new Point(341, 261);
+            updateOrderButton.Location = new Point(340, 276);
             updateOrderButton.Name = "updateOrderButton";
             updateOrderButton.Size = new Size(172, 61);
             updateOrderButton.TabIndex = 13;
@@ -170,7 +183,7 @@
             // 
             // updateItemButton
             // 
-            updateItemButton.Location = new Point(910, 261);
+            updateItemButton.Location = new Point(909, 276);
             updateItemButton.Name = "updateItemButton";
             updateItemButton.Size = new Size(172, 61);
             updateItemButton.TabIndex = 14;
@@ -180,7 +193,7 @@
             // 
             // deleteOrderButton
             // 
-            deleteOrderButton.Location = new Point(341, 328);
+            deleteOrderButton.Location = new Point(340, 343);
             deleteOrderButton.Name = "deleteOrderButton";
             deleteOrderButton.Size = new Size(172, 33);
             deleteOrderButton.TabIndex = 15;
@@ -190,7 +203,7 @@
             // 
             // deleteItemButton
             // 
-            deleteItemButton.Location = new Point(910, 328);
+            deleteItemButton.Location = new Point(909, 343);
             deleteItemButton.Name = "deleteItemButton";
             deleteItemButton.Size = new Size(172, 33);
             deleteItemButton.TabIndex = 16;
@@ -200,7 +213,7 @@
             // 
             // addOrderButton
             // 
-            addOrderButton.Location = new Point(341, 367);
+            addOrderButton.Location = new Point(340, 382);
             addOrderButton.Name = "addOrderButton";
             addOrderButton.Size = new Size(172, 37);
             addOrderButton.TabIndex = 17;
@@ -210,7 +223,7 @@
             // 
             // addOrderItemButton
             // 
-            addOrderItemButton.Location = new Point(910, 367);
+            addOrderItemButton.Location = new Point(909, 382);
             addOrderItemButton.Name = "addOrderItemButton";
             addOrderItemButton.Size = new Size(172, 37);
             addOrderItemButton.TabIndex = 18;
@@ -220,14 +233,14 @@
             // 
             // searchTextBox
             // 
-            searchTextBox.Location = new Point(1132, 271);
+            searchTextBox.Location = new Point(1131, 286);
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(140, 23);
             searchTextBox.TabIndex = 19;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(1132, 301);
+            searchButton.Location = new Point(1131, 316);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(140, 23);
             searchButton.TabIndex = 20;
@@ -237,7 +250,7 @@
             // 
             // clearSearchButton
             // 
-            clearSearchButton.Location = new Point(1132, 330);
+            clearSearchButton.Location = new Point(1131, 345);
             clearSearchButton.Name = "clearSearchButton";
             clearSearchButton.Size = new Size(140, 23);
             clearSearchButton.TabIndex = 21;
@@ -245,11 +258,141 @@
             clearSearchButton.UseVisualStyleBackColor = true;
             clearSearchButton.Click += clearSearchButton_Click;
             // 
+            // labelOrders
+            // 
+            labelOrders.AutoSize = true;
+            labelOrders.Location = new Point(12, 3);
+            labelOrders.Name = "labelOrders";
+            labelOrders.Size = new Size(46, 15);
+            labelOrders.TabIndex = 22;
+            labelOrders.Text = "Заказы";
+            // 
+            // labelOrderItems
+            // 
+            labelOrderItems.AutoSize = true;
+            labelOrderItems.Location = new Point(562, 3);
+            labelOrderItems.Name = "labelOrderItems";
+            labelOrderItems.Size = new Size(93, 15);
+            labelOrderItems.TabIndex = 23;
+            labelOrderItems.Text = "Позиции заказа";
+            // 
+            // labelDepartment
+            // 
+            labelDepartment.AutoSize = true;
+            labelDepartment.Location = new Point(12, 258);
+            labelDepartment.Name = "labelDepartment";
+            labelDepartment.Size = new Size(40, 15);
+            labelDepartment.TabIndex = 24;
+            labelDepartment.Text = "Отдел";
+            // 
+            // labelOrderId
+            // 
+            labelOrderId.AutoSize = true;
+            labelOrderId.Location = new Point(11, 299);
+            labelOrderId.Name = "labelOrderId";
+            labelOrderId.Size = new Size(54, 15);
+            labelOrderId.TabIndex = 25;
+            labelOrderId.Text = "Id заказа";
+            // 
+            // labelStatus
+            // 
+            labelStatus.AutoSize = true;
+            labelStatus.Location = new Point(10, 338);
+            labelStatus.Name = "labelStatus";
+            labelStatus.Size = new Size(43, 15);
+            labelStatus.TabIndex = 26;
+            labelStatus.Text = "Статус";
+            // 
+            // labelPickerOrderDate
+            // 
+            labelPickerOrderDate.AutoSize = true;
+            labelPickerOrderDate.Location = new Point(180, 258);
+            labelPickerOrderDate.Name = "labelPickerOrderDate";
+            labelPickerOrderDate.Size = new Size(122, 15);
+            labelPickerOrderDate.TabIndex = 27;
+            labelPickerOrderDate.Text = "Дата создания заказа";
+            // 
+            // labelGivingTheEnd
+            // 
+            labelGivingTheEnd.AutoSize = true;
+            labelGivingTheEnd.Location = new Point(180, 299);
+            labelGivingTheEnd.Name = "labelGivingTheEnd";
+            labelGivingTheEnd.Size = new Size(97, 15);
+            labelGivingTheEnd.TabIndex = 28;
+            labelGivingTheEnd.Text = "Дача окончания";
+            // 
+            // labelSteelGrade
+            // 
+            labelSteelGrade.AutoSize = true;
+            labelSteelGrade.Location = new Point(578, 258);
+            labelSteelGrade.Name = "labelSteelGrade";
+            labelSteelGrade.Size = new Size(77, 15);
+            labelSteelGrade.TabIndex = 29;
+            labelSteelGrade.Text = "Марка стали";
+            // 
+            // labelDiameter
+            // 
+            labelDiameter.AutoSize = true;
+            labelDiameter.Location = new Point(578, 299);
+            labelDiameter.Name = "labelDiameter";
+            labelDiameter.Size = new Size(55, 15);
+            labelDiameter.TabIndex = 30;
+            labelDiameter.Text = "Диаметр";
+            // 
+            // labelWallThickness
+            // 
+            labelWallThickness.AutoSize = true;
+            labelWallThickness.Location = new Point(578, 338);
+            labelWallThickness.Name = "labelWallThickness";
+            labelWallThickness.Size = new Size(45, 15);
+            labelWallThickness.TabIndex = 31;
+            labelWallThickness.Text = "Стенка";
+            // 
+            // labelVolume
+            // 
+            labelVolume.AutoSize = true;
+            labelVolume.Location = new Point(749, 258);
+            labelVolume.Name = "labelVolume";
+            labelVolume.Size = new Size(45, 15);
+            labelVolume.TabIndex = 32;
+            labelVolume.Text = "Объем";
+            // 
+            // labelUnit
+            // 
+            labelUnit.AutoSize = true;
+            labelUnit.Location = new Point(749, 299);
+            labelUnit.Name = "labelUnit";
+            labelUnit.Size = new Size(116, 15);
+            labelUnit.TabIndex = 33;
+            labelUnit.Text = "Единица измерения\n";
+            // 
+            // labelItemStatus
+            // 
+            labelItemStatus.AutoSize = true;
+            labelItemStatus.Location = new Point(749, 338);
+            labelItemStatus.Name = "labelItemStatus";
+            labelItemStatus.Size = new Size(93, 15);
+            labelItemStatus.TabIndex = 34;
+            labelItemStatus.Text = "Статус позиции";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1340, 503);
+            Controls.Add(labelItemStatus);
+            Controls.Add(labelUnit);
+            Controls.Add(labelVolume);
+            Controls.Add(labelWallThickness);
+            Controls.Add(labelDiameter);
+            Controls.Add(labelSteelGrade);
+            Controls.Add(labelGivingTheEnd);
+            Controls.Add(labelPickerOrderDate);
+            Controls.Add(labelStatus);
+            Controls.Add(labelOrderId);
+            Controls.Add(labelDepartment);
+            Controls.Add(labelOrderItems);
+            Controls.Add(labelOrders);
             Controls.Add(clearSearchButton);
             Controls.Add(searchButton);
             Controls.Add(searchTextBox);
@@ -266,7 +409,7 @@
             Controls.Add(diameterTextBox);
             Controls.Add(steelGradeTextBox);
             Controls.Add(itemsGridView);
-            Controls.Add(dateTimePickerDeliveryDate);
+            Controls.Add(dateTimeGivingTheEnd);
             Controls.Add(statusTextBox);
             Controls.Add(orderIdTextBox);
             Controls.Add(dateTimePickerOrderDate);
@@ -287,7 +430,7 @@
         private DateTimePicker dateTimePickerOrderDate;
         private TextBox orderIdTextBox;
         private TextBox statusTextBox;
-        private DateTimePicker dateTimePickerDeliveryDate;
+        private DateTimePicker dateTimeGivingTheEnd;
         private DataGridView itemsGridView;
         private TextBox steelGradeTextBox;
         private TextBox diameterTextBox;
@@ -304,5 +447,18 @@
         private TextBox searchTextBox;
         private Button searchButton;
         private Button clearSearchButton;
+        private Label labelOrders;
+        private Label labelOrderItems;
+        private Label labelDepartment;
+        private Label labelOrderId;
+        private Label labelStatus;
+        private Label labelPickerOrderDate;
+        private Label labelGivingTheEnd;
+        private Label labelSteelGrade;
+        private Label labelDiameter;
+        private Label labelWallThickness;
+        private Label labelVolume;
+        private Label labelUnit;
+        private Label labelItemStatus;
     }
 }
